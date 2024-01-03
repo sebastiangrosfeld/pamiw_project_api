@@ -26,7 +26,7 @@ public class ComputerSeeder implements Seeder{
 
     @Override
     public void seed(int objectsToSeed) {
-        final Set<Computer> computers = HashSet.newHashSet(objectsToSeed);
+        final Set<Computer> computers = new HashSet<>(objectsToSeed);
         List<Gpu> gpus = generateGpus(objectsToSeed);
         List<Ram> rams = generateRams(objectsToSeed);
         while (objectsToSeed > 0) {
