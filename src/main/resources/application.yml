@@ -4,11 +4,24 @@ security:
     bearer_prefix: "Bearer "
     expiration: 10800000
 spring:
-  flyway:
-    enabled: false
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://pamiw.postgres.database.azure.com:5432/computers?sslmode=require
+    username: pamiw
+    password: Projekt905!
+    name: computers
+  flyway:
+    enabled: false
+  docker:
+    compose:
+      enabled: false
+  devtools:
+    add-properties: false
   security:
     oauth2:
       client:
